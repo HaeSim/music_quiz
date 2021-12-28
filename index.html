@@ -72,7 +72,36 @@
 </html>
 
 <script>
+
+    var curID;
+    var onLoad = 0;
+    var yPlayer;
+    var duration = 10000;
+    var done = false;
+    var timer = undefined;
+    var aMode = false;
     var musicList = [];
+    musicList.push({title : '소방차 어젯밤이야기', url: 'https://www.youtube.com/watch?v=X2QxGwbhZlc'});
+    musicList.push({title : '지코 아무노래', url: 'https://www.youtube.com/watch?v=AAOyOZ3GeZ0'});
+    musicList.push({title : '빅뱅 거짓말', url: 'https://www.youtube.com/watch?v=Hy0W7AqDC_c'});
+    musicList.push({title : '아이유 좋은날', url: 'https://www.youtube.com/watch?v=nVQPNSI9Aw8'});
+    musicList.push({title : '블랙핑크 뚜두뚜두', url: 'https://www.youtube.com/watch?v=RMc9qFrCqno'});
+    musicList.push({title : '코요테 순정', url: 'https://www.youtube.com/watch?v=ZIfCGH45wFY'});
+    musicList.push({title : '브라운아이즈 벌써일년', url: 'https://www.youtube.com/watch?v=-sVo6NWwK_o'});
+    musicList.push({title : '버즈 남자를몰라', url: 'https://www.youtube.com/watch?v=rgms0zs6SZc'});
+    musicList.push({title : '채연 둘이서', url: 'https://www.youtube.com/watch?v=qJrFJRoto88'});
+    musicList.push({title : '윤도현 사랑했나봐', url: 'https://www.youtube.com/watch?v=4OSu1MsKaZw'});
+    musicList.push({title : '김건모 핑계', url: 'https://www.youtube.com/watch?v=P4cvqF106fI'});
+    musicList.push({title : '진주 난괜찮아', url: 'https://www.youtube.com/watch?v=b1meYzG4lvc'});
+    musicList.push({title : '스윗소로우 아무리생각해도난너를', url: 'https://www.youtube.com/watch?v=jR251U3_9B8'});
+    musicList.push({title : '김건모 잘못된만남', url: 'https://www.youtube.com/watch?v=CDKBuynxXfM'});
+    musicList.push({title : '자자 버스안에서', url: 'https://www.youtube.com/watch?v=R3DbYFoqGr8'});
+    musicList.push({title : '이정현 와', url: 'https://www.youtube.com/watch?v=N-QqRqISX0k'});
+    musicList.push({title : '스테이씨 ASAP', url: 'https://www.youtube.com/watch?v=XKH20-WCHpY'});
+    musicList.push({title : '에스파 savage', url: 'https://www.youtube.com/watch?v=ToxQLPErpKI'});
+    musicList.push({title : '비오 리무진', url: 'https://www.youtube.com/watch?v=3lwTql6YlSE'});
+    musicList.push({title : '거북이 비행기', url: 'https://www.youtube.com/watch?v=dXQzwNb8G7g'});
+
 
     // 빈 값 체크
     var isEmpty = function (value) {
@@ -91,14 +120,6 @@
             ? match[7]
             : false;
     }
-
-    var curID;
-    var onLoad = 0;
-    var yPlayer;
-    var duration = 10000;
-    var done = false;
-    var timer = undefined;
-    var aMode = false;
 
     function loadYouTubeApi() {
       console.log('loadYouTubeApi', curID);
@@ -146,8 +167,13 @@
         event
             .target
             .setVolume(50);
-        event
-            .target.playVideo();
+        if(!aMode) {
+            event
+                .target.playVideo();
+        } else {
+            event
+                .target.seekTo(30);
+        }
     }
     function onPlayerStateChange(event) {
       console.log('onPlayerStateChange', event.data);
@@ -192,27 +218,6 @@
             .closest("tr")
             .remove();
     });
-    
-    musicList.push({title : '소방차 어젯밤이야기', url: 'https://www.youtube.com/watch?v=X2QxGwbhZlc'});
-    musicList.push({title : '지코 아무노래', url: 'https://www.youtube.com/watch?v=AAOyOZ3GeZ0'});
-    musicList.push({title : '빅뱅 거짓말', url: 'https://www.youtube.com/watch?v=Hy0W7AqDC_c'});
-    musicList.push({title : '아이유 좋은날', url: 'https://www.youtube.com/watch?v=nVQPNSI9Aw8'});
-    musicList.push({title : '블랙핑크 뚜두뚜두', url: 'https://www.youtube.com/watch?v=RMc9qFrCqno'});
-    musicList.push({title : '코요테 순정', url: 'https://www.youtube.com/watch?v=ZIfCGH45wFY'});
-    musicList.push({title : '브라운아이즈 벌써일년', url: 'https://www.youtube.com/watch?v=-sVo6NWwK_o'});
-    musicList.push({title : '버즈 남자를몰라', url: 'https://www.youtube.com/watch?v=rgms0zs6SZc'});
-    musicList.push({title : '채연 둘이서', url: 'https://www.youtube.com/watch?v=qJrFJRoto88'});
-    musicList.push({title : '윤도현 사랑했나봐', url: 'https://www.youtube.com/watch?v=4OSu1MsKaZw'});
-    musicList.push({title : '김건모 핑계', url: 'https://www.youtube.com/watch?v=P4cvqF106fI'});
-    musicList.push({title : '진주 난괜찮아', url: 'https://www.youtube.com/watch?v=b1meYzG4lvc'});
-    musicList.push({title : '스윗소로우 아무리생각해도난너를', url: 'https://www.youtube.com/watch?v=jR251U3_9B8'});
-    musicList.push({title : '김건모 잘못된만남', url: 'https://www.youtube.com/watch?v=CDKBuynxXfM'});
-    musicList.push({title : '자자 버스안에서', url: 'https://www.youtube.com/watch?v=R3DbYFoqGr8'});
-    musicList.push({title : '이정현 와', url: 'https://www.youtube.com/watch?v=N-QqRqISX0k'});
-    musicList.push({title : '스테이씨 ASAP', url: 'https://www.youtube.com/watch?v=XKH20-WCHpY'});
-    musicList.push({title : '에스파 savage', url: 'https://www.youtube.com/watch?v=ToxQLPErpKI'});
-    musicList.push({title : '비오 리무진', url: 'https://www.youtube.com/watch?v=3lwTql6YlSE'});
-    musicList.push({title : '거북이 비행기', url: 'https://www.youtube.com/watch?v=dXQzwNb8G7g'});
 
     // 리스트 모두 삭제
     $(function () {
@@ -267,7 +272,6 @@
                 yPlayer = null;
                 onYouTubeIframeAPIReady();
             }
-
             loadYouTubeApi();
         }
     }
@@ -275,18 +279,21 @@
     $(document).on("click", "#Seq_Execute1", function () {
         var id = $(this).parent().children("#url").children().val();
         execute_func(id, 1500);
+        aMode = false;
         $('#mode').text("퀴즈모드");
         $('#title').text("노래 맞추기");
     });
     $(document).on("click", "#Seq_Execute3", function () {
         let id = $(this).parent().children("#url").children().val();
         execute_func(id, 3000);
+        aMode = false;
         $('#mode').text("퀴즈모드");
         $('#title').text("노래 맞추기");
     });
     $(document).on("click", "#Seq_Execute5", function () {
         let id = $(this).parent().children("#url").children().val();
         execute_func(id, 7000);
+        aMode = false;
         $('#mode').text("퀴즈모드");
         $('#title').text("노래 맞추기");
     });
@@ -295,7 +302,7 @@
         execute_func(id, 100000);
         let element = document.getElementById("player");
         let title = find_title(id);
-        var aMode = true;
+        aMode = true;
         element.removeAttribute("hidden");
         element.setAttribute("display", "block");
         $('#mode').text("정답모드");
