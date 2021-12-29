@@ -6,6 +6,7 @@ var done = false;
 var timer = undefined;
 var aMode = false;
 var musicList = [];
+var ranking = [];
 musicList.push({
   title: '소방차 어젯밤이야기',
   url: 'https://www.youtube.com/watch?v=X2QxGwbhZlc',
@@ -208,6 +209,12 @@ $('#basic').on('dblclick', 'tr td:nth-child(1)', function () {
 $(function () {
   $('#btn-empty').click(function () {
     $('#basic > tbody').empty();
+    ranking.splice(0, ranking.length);
+    $('#rank1').text('1위 : ');
+    $('#rank2').text('2위 : ');
+    $('#rank3').text('3위 : ');
+    $('#rank4').text('4위 : ');
+    $('#rank5').text('5위 : ');
     for (let i of musicList) {
       $('#btn-add-row').trigger('click', [i.url]);
     }
@@ -302,7 +309,7 @@ $(document).on('change', '#person', function () {
       Object.assign(i, { person: name });
     }
   }
-  const ranking = check_rank();
+  ranking = check_rank();
   $('#rank1').text('1위 : ' + ranking[0]);
   $('#rank2').text('2위 : ' + (ranking[1] ? ranking[1] : ''));
   $('#rank3').text('3위 : ' + (ranking[2] ? ranking[2] : ''));
