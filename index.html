@@ -20,7 +20,7 @@
         <left>
             <div id="player" hidden='hidden' style="position:fixed; width: 30%; height: 30%; z-index: 3;"></div>
         </left>
-        <table style="display:scroll; position:fixed; right: 10px; width:220px;">
+        <table style="display:scroll; position:fixed; right: 10px; width:220px; z-index: 4;">
             <tr>
                 <td id="btn-add-row" style="background-color:firebrick;cursor:pointer;">음악 추가</f>
                 <td id="btn-empty" style="background-color:cadetblue;cursor:pointer;">목록 초기화</td>
@@ -49,7 +49,7 @@
                 </td>
             </tr>
         </table>
-        <h1 id="title" style="width: 100%; font-size: 60; text-align: center; z-index: 1;">노래 맞추기</h1>
+        <h1 id="title" style="width: 100%; position: sticky; top: 20px; font-size: 60; text-align: center; z-index: 1;">노래 맞추기</h1>
         <div class="container">
             <table style="text-align: center;" id="basic">
                 <thead>
@@ -58,9 +58,9 @@
                         <th style="text-align: center;">순서</th>
                         <th style="text-align: center;">유튜브주소</th>
                         <th style="text-align: center;">정답자</th>
-                        <th style="text-align: center;">1초</th>
-                        <th style="text-align: center;">3초</th>
-                        <th style="text-align: center;">7초</th>
+                        <th style="text-align: center;">2초</th>
+                        <th style="text-align: center;">5초</th>
+                        <th style="text-align: center;">10초</th>
                         <th style="text-align: center;">정답</th>
                     </tr>
                 </thead>

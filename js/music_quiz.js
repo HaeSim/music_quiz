@@ -8,36 +8,56 @@ var aMode = false;
 var musicList = [];
 var ranking = [];
 musicList.push({
-  title: '소방차 어젯밤이야기',
-  url: 'https://www.youtube.com/watch?v=X2QxGwbhZlc',
+  title: 'BTS Dynamite',
+  url: 'https://www.youtube.com/watch?v=NLraNQMq8KM',
 });
 musicList.push({
-  title: '지코 아무노래',
-  url: 'https://www.youtube.com/watch?v=AAOyOZ3GeZ0',
+  title: 'NCT 영웅(Kick It)',
+  url: 'https://www.youtube.com/watch?v=MjTLxf1SN1c',
+});
+musicList.push({
+  title: '트와이스 OOH-AHH하게',
+  url: 'https://www.youtube.com/watch?v=8BgIHJvTeCU',
+});
+musicList.push({
+  title: 'DJDOC DOC와춤을',
+  url: 'https://www.youtube.com/watch?v=Z4R8BAF0vwo',
 });
 musicList.push({
   title: '빅뱅 거짓말',
   url: 'https://www.youtube.com/watch?v=Hy0W7AqDC_c',
 });
 musicList.push({
+  title: '더클래식 마법의성',
+  url: 'https://www.youtube.com/watch?v=DB-2ak5O2yc',
+});
+musicList.push({
+  title: '노라조 슈퍼맨',
+  url: 'https://www.youtube.com/watch?v=px5TcmU8KXU',
+});
+musicList.push({
+  title: '비오 리무진',
+  url: 'https://www.youtube.com/watch?v=3lwTql6YlSE',
+});
+musicList.push({
   title: '아이유 좋은날',
   url: 'https://www.youtube.com/watch?v=nVQPNSI9Aw8',
 });
 musicList.push({
-  title: '블랙핑크 뚜두뚜두',
-  url: 'https://www.youtube.com/watch?v=RMc9qFrCqno',
+  title: '블랙핑크 마지막처럼',
+  url: 'https://www.youtube.com/watch?v=OYiH3t5tZgo',
 });
 musicList.push({
-  title: '코요테 순정',
-  url: 'https://www.youtube.com/watch?v=ZIfCGH45wFY',
+  title: 'GOD 촛불하나',
+  url: 'https://www.youtube.com/watch?v=Ob6GCjJae-8',
 });
 musicList.push({
-  title: '브라운아이즈 벌써일년',
-  url: 'https://www.youtube.com/watch?v=-sVo6NWwK_o',
+  title: '이무진 신호등',
+  url: 'https://www.youtube.com/watch?v=RkB6uWOIJzo',
 });
 musicList.push({
-  title: '버즈 남자를몰라',
-  url: 'https://www.youtube.com/watch?v=rgms0zs6SZc',
+  title: 'HOT 캔디',
+  url: 'https://www.youtube.com/watch?v=GMsc7wGghy8',
 });
 musicList.push({
   title: '채연 둘이서',
@@ -52,36 +72,28 @@ musicList.push({
   url: 'https://www.youtube.com/watch?v=P4cvqF106fI',
 });
 musicList.push({
-  title: '진주 난괜찮아',
-  url: 'https://www.youtube.com/watch?v=b1meYzG4lvc',
-});
-musicList.push({
-  title: '스윗소로우 아무리생각해도난너를',
-  url: 'https://www.youtube.com/watch?v=jR251U3_9B8',
-});
-musicList.push({
-  title: '김건모 잘못된만남',
-  url: 'https://www.youtube.com/watch?v=CDKBuynxXfM',
-});
-musicList.push({
-  title: '자자 버스안에서',
-  url: 'https://www.youtube.com/watch?v=R3DbYFoqGr8',
+  title: '박진영 그녀는 예뻤다',
+  url: 'https://www.youtube.com/watch?v=JjXSmU52xUg',
 });
 musicList.push({
   title: '스테이씨 ASAP',
   url: 'https://www.youtube.com/watch?v=XKH20-WCHpY',
 });
 musicList.push({
-  title: '이정현 와',
-  url: 'https://www.youtube.com/watch?v=N-QqRqISX0k',
+  title: '김건모 잘못된만남',
+  url: 'https://www.youtube.com/watch?v=CDKBuynxXfM',
 });
 musicList.push({
   title: '에스파 savage',
   url: 'https://www.youtube.com/watch?v=ToxQLPErpKI',
 });
 musicList.push({
-  title: '비오 리무진',
-  url: 'https://www.youtube.com/watch?v=3lwTql6YlSE',
+  title: '자자 버스안에서',
+  url: 'https://www.youtube.com/watch?v=R3DbYFoqGr8',
+});
+musicList.push({
+  title: '솔리드 천생연분',
+  url: 'https://www.youtube.com/watch?v=M2hlTs4ngsY',
 });
 musicList.push({
   title: '거북이 비행기',
@@ -155,7 +167,8 @@ function onPlayerReady(event) {
   if (!aMode) {
     event.target.playVideo();
   } else {
-    event.target.seekTo(30);
+    event.target.setVolume(70);
+    event.target.seekTo(60);
   }
 }
 function onPlayerStateChange(event) {
@@ -270,21 +283,21 @@ function execute_func(id, time) {
 
 $(document).on('click', '#Seq_Execute1', function () {
   var id = $(this).parent().children('#url').children().val();
-  execute_func(id, 1500);
+  execute_func(id, 2000);
   aMode = false;
   $('#mode').text('퀴즈모드');
   $('#title').text('노래 맞추기');
 });
 $(document).on('click', '#Seq_Execute3', function () {
   let id = $(this).parent().children('#url').children().val();
-  execute_func(id, 3000);
+  execute_func(id, 5000);
   aMode = false;
   $('#mode').text('퀴즈모드');
   $('#title').text('노래 맞추기');
 });
 $(document).on('click', '#Seq_Execute5', function () {
   let id = $(this).parent().children('#url').children().val();
-  execute_func(id, 7000);
+  execute_func(id, 10000);
   aMode = false;
   $('#mode').text('퀴즈모드');
   $('#title').text('노래 맞추기');
