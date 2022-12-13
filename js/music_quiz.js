@@ -1,3 +1,281 @@
+const MUSIC_LIST = [
+  {
+    id: 1,
+    title: '이효리 - 10 Minutes',
+    url: 'https://www.youtube.com/watch?v=BbJ4ibqR6PQ',
+  },
+  {
+    id: 2,
+    title: `나미 - 영원한 친구`,
+    url: 'https://www.youtube.com/watch?v=VPo8e3XqGsU',
+  },
+  {
+    id: 3,
+    title: `마로니에 - 칵테일 사랑`,
+    url: 'https://www.youtube.com/watch?v=sp5ujZzMRZ8',
+  },
+  {
+    id: 4,
+    title: `뉴진스 - Attention `,
+    url: 'https://www.youtube.com/watch?v=ma8FcJxhZnw',
+  },
+  {
+    id: 5,
+    title: '아이유 - 좋은날',
+    url: 'https://www.youtube.com/watch?v=nVQPNSI9Aw8',
+  },
+  {
+    id: 6,
+    title: '윤도현 - 사랑했나봐',
+    url: 'https://www.youtube.com/watch?v=4OSu1MsKaZw',
+  },
+  {
+    id: 7,
+    title: `샤이니 - 누난 너무 예뻐`,
+    url: 'https://www.youtube.com/watch?v=UyEkTQ0OVXw',
+  },
+  {
+    id: 8,
+    title: `무한궤도 - 그대에게`,
+    url: 'https://www.youtube.com/watch?v=5dHcVjj_Kq0',
+  },
+  {
+    id: 9,
+    title: `LE SSERAFIM(르세라핌) - ANTIFRAGILE`,
+    url: 'https://www.youtube.com/watch?v=UkRfiosqsvk',
+  },
+  {
+    id: 10,
+    title: `윤하 - 비밀번호 486`,
+    url: 'https://www.youtube.com/watch?v=D6aSkGrd_Z0',
+  },
+  {
+    id: 11,
+    title: `김아중 - 마리아`,
+    url: 'https://www.youtube.com/watch?v=siKu0o0vAfA',
+  },
+  {
+    id: 12,
+    title: `트와이스 - CHEER UP`,
+    url: 'https://www.youtube.com/watch?v=8WR76Esd_BI',
+  },
+  {
+    id: 13,
+    title: '빅뱅 - 거짓말',
+    url: 'https://www.youtube.com/watch?v=Hy0W7AqDC_c',
+  },
+  {
+    id: 14,
+    title: `BE'O (비오) - Counting Stars`,
+    url: 'https://www.youtube.com/watch?v=9uxYuIpvsjw',
+  },
+  {
+    id: 15,
+    title: `보아 - 아틸란티스 소녀`,
+    url: 'https://www.youtube.com/watch?v=ntTRbTkw4UA',
+  },
+  {
+    id: 16,
+    title: `H.O.T - 캔디`,
+    url: 'https://www.youtube.com/watch?v=GMsc7wGghy8',
+  },
+  {
+    id: 17,
+    title: `김완선 - 삐에로는 우릴 보고 웃지`,
+    url: 'https://www.youtube.com/watch?v=4WBKYnjj6-A',
+  },
+  {
+    id: 18,
+    title: `2PM - 우리집`,
+    url: 'https://www.youtube.com/watch?v=KIY2XkwOZBA',
+  },
+  {
+    id: 19,
+    title: '더클래식 - 마법의성',
+    url: 'https://www.youtube.com/watch?v=DB-2ak5O2yc',
+  },
+  {
+    id: 20,
+    title: '(G)I-DLE (여자)아이들 - TOMBOY ',
+    url: 'https://www.youtube.com/watch?v=qstBQslSP44',
+  },
+  {
+    id: 21,
+    title: 'DJDOC - DOC와춤을',
+    url: 'https://www.youtube.com/watch?v=Z4R8BAF0vwo',
+  },
+  {
+    id: 22,
+    title: `브레이브걸스 - 롤린`,
+    url: 'https://www.youtube.com/watch?v=YlY2euBAZfM',
+  },
+  {
+    id: 23,
+    title: `레드벨벳 - Psycho`,
+    url: 'https://www.youtube.com/watch?v=ldneQsewJEc',
+  },
+  {
+    id: 24,
+    title: `지코 (ZICO) - 새삥`,
+    url: 'https://www.youtube.com/watch?v=azaZt7eccnc',
+  },
+  {
+    id: 25,
+    title: `아이브(IVE) - After LIKE`,
+    url: 'https://www.youtube.com/watch?v=SCMd9OITTxU',
+  },
+  {
+    id: 26,
+    title: '김건모 핑계',
+    url: 'https://www.youtube.com/watch?v=P4cvqF106fI',
+  },
+  {
+    id: 27,
+    title: `김건모 - 잘못된만남`,
+    url: 'https://www.youtube.com/watch?v=n2AsXQtK8aA',
+  },
+  {
+    id: 28,
+    title: `SG워너비 - 라라라`,
+    url: 'https://www.youtube.com/watch?v=N7R6O7-SFVU',
+  },
+  {
+    id: 29,
+    title: `브라운아이드걸스 - Abracadabra`,
+    url: 'https://www.youtube.com/watch?v=dWsWbd7xauA',
+  },
+  {
+    id: 30,
+    title: `블랙핑크 - Shut Down`,
+    url: 'https://www.youtube.com/watch?v=boeFmTGtl88',
+  },
+  {
+    id: 31,
+    title: `자자 - 버스안에서`,
+    url: 'https://www.youtube.com/watch?v=KhZ-_b_Sy-w',
+  },
+  {
+    id: 32,
+    title: `디바 - 왜 불러`,
+    url: 'https://www.youtube.com/watch?v=vpcBQ13Tar0',
+  },
+  {
+    id: 33,
+    title: `비투비 - 그리워하다`,
+    url: 'https://www.youtube.com/watch?v=-yU6ib_QQw0',
+  },
+  {
+    id: 34,
+    title: `스테이씨 - ASAP`,
+    url: 'https://www.youtube.com/watch?v=XKH20-WCHpY',
+  },
+  {
+    id: 35,
+    title: `벤 - 열애중`,
+    url: 'https://www.youtube.com/watch?v=PrqBlVtliqs',
+  },
+  {
+    id: 36,
+    title: `청하 - 벌써12시`,
+    url: 'https://www.youtube.com/watch?v=Nnc1BIjTXpE',
+  },
+  {
+    id: 37,
+    title: '박진영 - 그녀는 예뻤다',
+    url: 'https://www.youtube.com/watch?v=u_QXghQpuBo',
+  },
+  {
+    id: 38,
+    title: `케이윌 - 이러지마 제발`,
+    url: 'https://www.youtube.com/watch?v=Gi229tnPkvw',
+  },
+  {
+    id: 39,
+    title: '트와이스 - OOH-AHH하게',
+    url: 'https://www.youtube.com/watch?v=8BgIHJvTeCU',
+  },
+  {
+    id: 40,
+    title: `BTS - Dynamite`,
+    url: 'https://www.youtube.com/watch?v=KhZ5DCd7m6s',
+  },
+  {
+    id: 41,
+    title: `aespa - Next Level`,
+    url: 'https://www.youtube.com/watch?v=dly3BvtmXbA',
+  },
+  {
+    id: 42,
+    title: '노라조 - 슈퍼맨',
+    url: 'https://www.youtube.com/watch?v=px5TcmU8KXU',
+  },
+  {
+    id: 43,
+    title: `나미 - 빙글빙글`,
+    url: 'https://www.youtube.com/watch?v=k-RID0GSl60',
+  },
+  {
+    id: 44,
+    title: `다비치 - 8282`,
+    url: 'https://www.youtube.com/watch?v=OJvNhkxtveo',
+  },
+  {
+    id: 45,
+    title: '채연 - 둘이서',
+    url: 'https://www.youtube.com/watch?v=qJrFJRoto88',
+  },
+  {
+    id: 46,
+    title: 'GOD - 촛불하나',
+    url: 'https://www.youtube.com/watch?v=Ob6GCjJae-8',
+  },
+  {
+    id: 47,
+    title: `SS501 - URman`,
+    url: 'https://www.youtube.com/watch?v=kqk5NQmgV50',
+  },
+  {
+    id: 48,
+    title: '솔리드 - 천생연분',
+    url: 'https://www.youtube.com/watch?v=M2hlTs4ngsY',
+  },
+  {
+    id: 49,
+    title: `엄정화 - 초대`,
+    url: 'https://www.youtube.com/watch?v=fzu5xrpMvis',
+  },
+  {
+    id: 50,
+    title: `소녀시대 - Oh!`,
+    url: 'https://www.youtube.com/watch?v=UkyVJUUmLac',
+  },
+  {
+    id: 51,
+    title: `izi - 응급실`,
+    url: 'https://www.youtube.com/watch?v=E-BvyQb7mWE',
+  },
+  {
+    id: 52,
+    title: `에이트 - 심장이 없어`,
+    url: 'https://www.youtube.com/watch?v=rXtc_C63Vas',
+  },
+  {
+    id: 53,
+    title: `브라운 아이즈 - 벌써 일년`,
+    url: 'https://www.youtube.com/watch?v=-sVo6NWwK_o',
+  },
+  {
+    id: 54,
+    title: `스테이씨 - 색안경`,
+    url: 'https://www.youtube.com/watch?v=NBgLUCVBEuo',
+  },
+  {
+    id: 55,
+    title: `거북이 - 비행기`,
+    url: 'https://www.youtube.com/watch?v=C_td7PbYe-M',
+  },
+];
+
 var curID;
 var onLoad = 0;
 var yPlayer;
@@ -7,98 +285,10 @@ var timer = undefined;
 var aMode = false;
 var musicList = [];
 var ranking = [];
-musicList.push({
-  title: 'BTS Dynamite',
-  url: 'https://www.youtube.com/watch?v=NLraNQMq8KM',
-});
-musicList.push({
-  title: 'NCT 영웅(Kick It)',
-  url: 'https://www.youtube.com/watch?v=MjTLxf1SN1c',
-});
-musicList.push({
-  title: '트와이스 OOH-AHH하게',
-  url: 'https://www.youtube.com/watch?v=8BgIHJvTeCU',
-});
-musicList.push({
-  title: 'DJDOC DOC와춤을',
-  url: 'https://www.youtube.com/watch?v=Z4R8BAF0vwo',
-});
-musicList.push({
-  title: '빅뱅 거짓말',
-  url: 'https://www.youtube.com/watch?v=Hy0W7AqDC_c',
-});
-musicList.push({
-  title: '더클래식 마법의성',
-  url: 'https://www.youtube.com/watch?v=DB-2ak5O2yc',
-});
-musicList.push({
-  title: '노라조 슈퍼맨',
-  url: 'https://www.youtube.com/watch?v=px5TcmU8KXU',
-});
-musicList.push({
-  title: '비오 리무진',
-  url: 'https://www.youtube.com/watch?v=3lwTql6YlSE',
-});
-musicList.push({
-  title: '아이유 좋은날',
-  url: 'https://www.youtube.com/watch?v=nVQPNSI9Aw8',
-});
-musicList.push({
-  title: '블랙핑크 마지막처럼',
-  url: 'https://www.youtube.com/watch?v=OYiH3t5tZgo',
-});
-musicList.push({
-  title: 'GOD 촛불하나',
-  url: 'https://www.youtube.com/watch?v=Ob6GCjJae-8',
-});
-musicList.push({
-  title: '이무진 신호등',
-  url: 'https://www.youtube.com/watch?v=RkB6uWOIJzo',
-});
-musicList.push({
-  title: 'HOT 캔디',
-  url: 'https://www.youtube.com/watch?v=GMsc7wGghy8',
-});
-musicList.push({
-  title: '채연 둘이서',
-  url: 'https://www.youtube.com/watch?v=qJrFJRoto88',
-});
-musicList.push({
-  title: '윤도현 사랑했나봐',
-  url: 'https://www.youtube.com/watch?v=4OSu1MsKaZw',
-});
-musicList.push({
-  title: '김건모 핑계',
-  url: 'https://www.youtube.com/watch?v=P4cvqF106fI',
-});
-musicList.push({
-  title: '박진영 그녀는 예뻤다',
-  url: 'https://www.youtube.com/watch?v=JjXSmU52xUg',
-});
-musicList.push({
-  title: '스테이씨 ASAP',
-  url: 'https://www.youtube.com/watch?v=XKH20-WCHpY',
-});
-musicList.push({
-  title: '김건모 잘못된만남',
-  url: 'https://www.youtube.com/watch?v=CDKBuynxXfM',
-});
-musicList.push({
-  title: '에스파 savage',
-  url: 'https://www.youtube.com/watch?v=ToxQLPErpKI',
-});
-musicList.push({
-  title: '자자 버스안에서',
-  url: 'https://www.youtube.com/watch?v=R3DbYFoqGr8',
-});
-musicList.push({
-  title: '솔리드 천생연분',
-  url: 'https://www.youtube.com/watch?v=M2hlTs4ngsY',
-});
-musicList.push({
-  title: '거북이 비행기',
-  url: 'https://www.youtube.com/watch?v=dXQzwNb8G7g',
-});
+
+for (let i in MUSIC_LIST) {
+  musicList.push(MUSIC_LIST[i]);
+}
 
 // 빈 값 체크
 var isEmpty = function (value) {
@@ -168,7 +358,7 @@ function onPlayerReady(event) {
     event.target.playVideo();
   } else {
     event.target.setVolume(70);
-    event.target.seekTo(60);
+    event.target.seekTo(40);
   }
 }
 function onPlayerStateChange(event) {
